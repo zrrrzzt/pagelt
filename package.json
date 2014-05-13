@@ -1,0 +1,39 @@
+{
+  "name": "pagelt",
+  "description": "Check time to load a page",
+  "version": "0.0.1",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "bin": {
+    "pagelt": "cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/*.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zrrrzzt/pagelt.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zrrrzzt/pagelt/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.34.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}
