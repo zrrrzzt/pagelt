@@ -8,11 +8,24 @@ module.exports = function(uri, callback){
     return callback(new Error('Missing required param'), null);
   }
 
-  if(!validUrl.isUri(uri)){
+  if(!validUrl.isWebUri(uri)){
     return callback(new Error('Invalid uri'), null);
   }
 
+  var start = new Date().getTime();
 
-  return callback(null, 'bazooonga');
+  request(uri, function(err, response, body){
+    if(err){
+      return callback(err, null);
+    }
+
+    var end = new Date().getTime()
+      , ms = end - start
+      , ret = JSON.stringify({"start":start,"end":end,"ms":ms})
+      ;
+
+    return callback(null, ret);
+
+  });
 
 };
