@@ -4,7 +4,7 @@ var pagelt = require('../index')
 
 describe('pagelt - response', function(){
 
-  it('Should return json', function(done){
+  it('Should return a data object', function(done){
 
     var uri = 'http://www.google.com';
 

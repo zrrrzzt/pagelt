@@ -21,10 +21,9 @@ module.exports = function(uri, callback){
 
     var end = new Date().getTime()
       , ms = end - start
-      , ret = JSON.stringify({"start":start,"end":end,"ms":ms})
       ;
 
-    return callback(null, ret);
+    return callback(null, {"start":start,"end":end,"ms":ms});
 
   });
 
