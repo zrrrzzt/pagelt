@@ -23,7 +23,7 @@ module.exports = function(uri, callback){
       , ms = end - start
       ;
 
-    return callback(null, {"start":start,"end":end,"ms":ms});
+    return callback(null, {"start":start,"end":end,"ms":ms, "status":response.statusCode});
 
   });
 
