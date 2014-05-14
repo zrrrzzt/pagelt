@@ -1,6 +1,6 @@
 {
   "name": "pagelt",
-  "description": "Measure time to load a page",
+  "description": "Measure loadtime for a page",
   "version": "0.0.1",
   "author": {
     "name": "Geir Gåsodden",
