@@ -19,6 +19,8 @@ describe('pagelt - response', function(){
 
       assert(data.ms);
 
+      assert(data.status);
+
       done();
     });
 
