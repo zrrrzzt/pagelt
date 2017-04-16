@@ -1,30 +1,24 @@
-var request = require('request')
-  , validUrl =require('valid-url')
-  ;
+'use strict'
 
-module.exports = function(uri, callback){
+const validUrl = require('valid-url')
+const getPage = require('./lib/get-page')
 
-  if(!uri){
-    return callback(new Error('Missing required param'), null);
+module.exports = (uri, callback) => {
+
+  if (!uri) {
+    return callback(new Error('Missing required param'), null)
   }
 
   if(!validUrl.isWebUri(uri)){
-    return callback(new Error('Invalid uri'), null);
+    return callback(new Error('Invalid uri'), null)
   }
 
-  var start = new Date().getTime();
+  const start = new Date().getTime()
 
-  request(uri, function(err, response, body){
-    if(err){
-      return callback(err, null);
-    }
-
-    var end = new Date().getTime()
-      , ms = end - start
-      ;
-
-    return callback(null, {"start":start,"end":end,"ms":ms, "status":response.statusCode});
-
-  });
-
-};
+  getPage(uri)
+    .then(result => {
+      const end = new Date().getTime()
+      return callback(null, {start: start, end: end, ms: end - start, status: result.statusCode})
+    })
+    .catch(error => callback(error, null))
+}

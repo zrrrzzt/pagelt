@@ -1,8 +1,10 @@
-#pagelt [![Build Status](https://travis-ci.org/zrrrzzt/pagelt.svg?branch=master)](https://travis-ci.org/zrrrzzt/pagelt)
+[![Build Status](https://travis-ci.org/zrrrzzt/pagelt.svg?branch=master)](https://travis-ci.org/zrrrzzt/pagelt)
+
+# pagelt 
 
 Node.js module/CLI app for measuring time to load for a webpage.
 
-##Installation
+## Installation
 
 ```
 $ npm install pagelt
@@ -14,7 +16,7 @@ You can also install it globally to use the CLI version
 $ npm install pagelt -g
 ```
 
-##Test
+## Test
 
 Make sure you have installed [Mocha](http://mochajs.org/) globally or go to the pagelt folder and do an nmp install.
 
@@ -22,22 +24,23 @@ Make sure you have installed [Mocha](http://mochajs.org/) globally or go to the 
 $ npm test
 ```
 
-##Usage - module
+## Usage - module
 
 Pass the uri for the page you want to measure.
 
-```javascript
-var plt = require('pagelt')
-  , uri = 'http://www.google.com' 
-  ;
+```JavaScript
+const plt = require('pagelt')
+const uri = 'http://www.google.com' 
 
-plt(uri, function(err, data){
-  if(err)throw err;
-  console.log(data);
-});
+plt(uri, (err, data) => {
+  if (error) {
+    throw error
+  }
+  console.log(data)
+})
 ```
 
-##Usage - CLI
+## Usage - CLI
 
 To use it as a CLI app install it globally.
 
@@ -59,9 +62,9 @@ Usage:
 $ pagelt <uri>
 ```
 
-##Output
+## Output
 
-```
+```JavaScript
 {
   "start": 1400085247092,
   "end": 1400085247396,
@@ -69,3 +72,9 @@ $ pagelt <uri>
   "status": 200
 }
 ```
+
+## License
+
+[MIT](LICENSE)
+
+![Robohash image of pagelt](https://robots.kebabstudios.party/pagelt.png "Robohash image of pagelt")
